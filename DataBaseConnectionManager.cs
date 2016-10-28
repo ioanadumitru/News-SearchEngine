@@ -34,7 +34,7 @@ namespace DevAcademyQuest
         {
             string dataBase = "newsengine";
             string user = "root";
-            string password = "Afaraploua19";
+            string password = "root";
             string server = "localhost";
             string connect = "SERVER=" + server + ";" + "DATABASE=" +
                               dataBase + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";";
