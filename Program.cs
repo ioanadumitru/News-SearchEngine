@@ -1,41 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.IO;
+using System.Windows.Forms;
 
-namespace DevAcademyQuest
+namespace UI
 {
-    class Program
+    static class Program
     {
-      //  public static object Image { get; private set; }
-
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FirstPage());
 
-            FileManager f = new FileManager();
-            f.ProcessFile("articles.txt");
-
-            DataBaseConnectionManager c = DataBaseConnectionManager.getInstance();
-            c.SearchArticlesByTitle(" Option Pricing");
-            c.SelectArticlesByAuthor(" Letian Ye");
-            DateTime d = new DateTime(2016, 10, 19);
-            c.SelectArticlesByDate(d, DateTime.Now);
-
-
-            if (File.Exists("tablouIoana.png"))
-            {
-                byte[] bytes = File.ReadAllBytes("tablouIoana.png");
-                User ioana = new User("ioanaDumitru", "ioanadumitru09@gmail.com", bytes);
-                c.AddUser(ioana);
-
-                Query q = new Query(ioana, "derivatives");
-
-                c.AddToQueryHistory(q);
-                c.AddToQueryHistory(q);
-                c.PeformAutocompletion("der");
-            }
         }
     }
 }
