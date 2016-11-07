@@ -8,8 +8,8 @@ namespace DevAcademyQuest
 {
     public class Article
     {
-        string title { get; }
-        string author { get; }
+        string title; 
+        string author;
         DateTime publishDate;
         string text;
         int index;
